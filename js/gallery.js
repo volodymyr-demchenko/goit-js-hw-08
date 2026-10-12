@@ -97,13 +97,15 @@ gallery.addEventListener('click', e => {
   const largeImageURL = e.target.getAttribute('data-source');
   const imageAlt = e.target.alt;
 
+  let instance;
+
   const onEscKeyPress = e => {
     if (e.code === 'Escape') {
       instance.close();
     }
   };
 
-  const instance = basicLightbox.create(
+  instance = basicLightbox.create(
     `<img src='${largeImageURL}' alt='${imageAlt}'>`,
     {
       onShow: () => {
